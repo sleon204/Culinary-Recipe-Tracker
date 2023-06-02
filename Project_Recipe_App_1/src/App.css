@@ -9,21 +9,21 @@
   text-align: center;
 }
 
-/* Center the title and set font properties */
+/* Center title and set font properties */
 h1.delicious-food {
   margin-top: 0;
   font-family: 'Playfair Display SC', serif;
   font-size: 64px;
 }
 
-/* Center the RecipeList component */
+/* Center RecipeList */
 .recipe-list {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-/* Set the width of columns using nth-child */
+/* width of columns */
 table th:nth-child(1),
 table td:nth-child(1) {
   width: 10%;
@@ -54,26 +54,26 @@ table td:nth-child(6) {
   width: 10%;
 }
 
-/* Apply zebra striping to table rows */
+/* table row stripes */
 table tbody tr:nth-child(odd) {
   background-color: #fff0c7;
   /* or any other color of your preference */
 }
 
-/* Apply scrollbar to the content_td class */
+/* content_td scrollbar */
 .content_td {
   max-height: 200px;
   overflow-y: auto;
 }
 
-/* Set image properties */
+/* image properties */
 table td img {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
 }
 
-/* Apply styles to RecipeCreate */
+/* RecipeCreate */
 form[name="create"] table {
   width: 100%;
   table-layout: fixed;
