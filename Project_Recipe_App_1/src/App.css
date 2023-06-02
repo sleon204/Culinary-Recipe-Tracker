@@ -1,0 +1,101 @@
+/* App.css */
+
+/* Center the entire app */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Center the title and set font properties */
+h1.delicious-food {
+  margin-top: 0;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 64px;
+}
+
+/* Center the RecipeList component */
+.recipe-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Set the width of columns using nth-child */
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 10%;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  width: 10%;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 10%;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+  width: 30%;
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+  width: 30%;
+}
+
+table th:nth-child(6),
+table td:nth-child(6) {
+  width: 10%;
+}
+
+/* Apply zebra striping to table rows */
+table tbody tr:nth-child(odd) {
+  background-color: #fff0c7;
+  /* or any other color of your preference */
+}
+
+/* Apply scrollbar to the content_td class */
+.content_td {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Set image properties */
+table td img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+/* Apply styles to RecipeCreate */
+form[name="create"] table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+form[name="create"] table th:nth-child(1),
+form[name="create"] table td:nth-child(1),
+form[name="create"] table th:nth-child(2),
+form[name="create"] table td:nth-child(2),
+form[name="create"] table th:nth-child(3),
+form[name="create"] table td:nth-child(3) {
+  width: 10%;
+}
+
+form[name="create"] table th:nth-child(4),
+form[name="create"] table td:nth-child(4),
+form[name="create"] table th:nth-child(5),
+form[name="create"] table td:nth-child(5) {
+  width: 30%;
+}
+
+form[name="create"] table th:nth-child(6),
+form[name="create"] table td:nth-child(6) {
+  width: 10%;
+}
