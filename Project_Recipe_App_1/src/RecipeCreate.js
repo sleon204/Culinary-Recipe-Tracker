@@ -30,7 +30,7 @@ function RecipeCreate({ addRecipe }) {
       return;
     }
 
-    // Check if the photo URL is valid
+  
     if (!isValidImageUrl(recipe.photo)) {
       setError("Please enter a valid image URL.");
       return;
@@ -48,7 +48,6 @@ function RecipeCreate({ addRecipe }) {
   };
 
   const isValidImageUrl = (url) => {
-    // Simple check for valid URL format
     return /^(ftp|http|https):\/\/[^ "]+$/.test(url);
   };
 
