@@ -1,4 +1,3 @@
-// RecipeCreate.js
 import React, { useState } from "react";
 
 function RecipeCreate({ addRecipe }) {
@@ -9,6 +8,7 @@ function RecipeCreate({ addRecipe }) {
     ingredients: "",
     preparation: "",
   });
+  const [error, setError] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,6 +17,25 @@ function RecipeCreate({ addRecipe }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Check for empty inputs
+    if (
+      recipe.name.trim() === "" ||
+      recipe.cuisine.trim() === "" ||
+      recipe.photo.trim() === "" ||
+      recipe.ingredients.trim() === "" ||
+      recipe.preparation.trim() === ""
+    ) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    // Check if the photo URL is valid
+    if (!isValidImageUrl(recipe.photo)) {
+      setError("Please enter a valid image URL.");
+      return;
+    }
+
     addRecipe(recipe);
     setRecipe({
       name: "",
@@ -25,6 +44,12 @@ function RecipeCreate({ addRecipe }) {
       ingredients: "",
       preparation: "",
     });
+    setError("");
+  };
+
+  const isValidImageUrl = (url) => {
+    // Simple check for valid URL format
+    return /^(ftp|http|https):\/\/[^ "]+$/.test(url);
   };
 
   return (
@@ -52,7 +77,7 @@ function RecipeCreate({ addRecipe }) {
             </td>
             <td className="photo_td">
               <input
-                type="text"
+                type="url"
                 name="photo"
                 value={recipe.photo}
                 onChange={handleChange}
@@ -81,6 +106,7 @@ function RecipeCreate({ addRecipe }) {
           </tr>
         </tbody>
       </table>
+      {error && <p className="error-message">{error}</p>}
     </form>
   );
 }
